@@ -14,6 +14,7 @@ URL:		http://vdr.schmirler.de/
 Source:		http://vdr.schmirler.de/epgsync/vdr-%plugin-%version.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.4.1-6
+BuildRequires:	svdrpservice-devel
 Requires:	vdr-abi = %vdr_abi
 Requires:	vdr-plugin-svdrpservice
 
