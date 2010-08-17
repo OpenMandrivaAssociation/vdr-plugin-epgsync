@@ -1,8 +1,8 @@
 
 %define plugin	epgsync
 %define name	vdr-plugin-%plugin
-%define version	0.0.3
-%define rel	2
+%define version	0.0.4
+%define rel	1
 
 Summary:	VDR plugin: Import EPG of an other VDR
 Name:		%name
