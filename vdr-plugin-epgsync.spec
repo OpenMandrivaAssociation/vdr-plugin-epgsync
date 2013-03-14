@@ -2,7 +2,7 @@
 %define plugin	epgsync
 %define name	vdr-plugin-%plugin
 %define version	0.0.4
-%define rel	1
+%define rel	2
 
 Summary:	VDR plugin: Import EPG of an other VDR
 Name:		%name
@@ -12,7 +12,6 @@ Group:		Video
 License:	GPL
 URL:		http://vdr.schmirler.de/
 Source:		http://vdr.schmirler.de/epgsync/vdr-%plugin-%version.tgz
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 BuildRequires:	svdrpservice-devel
 Requires:	vdr-abi = %vdr_abi
@@ -32,17 +31,7 @@ perl -pi -e 's,"../svdrpservice/svdrpservice.h",<vdr/svdrpservice/svdrpservice.h
 %vdr_plugin_build
 
 %install
-rm -rf %{buildroot}
 %vdr_plugin_install
-
-%clean
-rm -rf %{buildroot}
-
-%post
-%vdr_plugin_post %plugin
-
-%postun
-%vdr_plugin_postun %plugin
 
 %files -f %plugin.vdr
 %defattr(-,root,root)
